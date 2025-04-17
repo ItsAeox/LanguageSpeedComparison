@@ -1,0 +1,8 @@
+{
+  "language": "C++",
+  "range": [1, 10000000],
+  "primes_found": 664579,
+  "single_thread_time": 11.69,
+  "multi_thread_time": 4.254,
+  "speedup": 2.748
+}

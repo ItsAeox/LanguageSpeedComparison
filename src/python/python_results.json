@@ -1,0 +1,1 @@
+{"language": "Python", "range": [1, 10000000], "primes_found": 664579, "single_thread_time": 51.47992539405823, "multi_thread_time": 51.11587071418762, "speedup": 1.0071221457207724}

@@ -32,6 +32,8 @@ def threaded_find_primes(range_start: int, range_end: int, num_threads: int = 4)
     return [prime for sublist in results for prime in sublist]
 
 def run_benchmark(range_start: int, range_end: int, num_threads: int = 4):
+    print("Running Python benchmark...")
+    
     # Non-threaded benchmark
     start_time = time.time()
     single_thread_primes = find_primes_range(range_start, range_end)
@@ -54,8 +56,6 @@ def run_benchmark(range_start: int, range_end: int, num_threads: int = 4):
     # Save results to file
     with open("python_results.json", "w") as f:
         json.dump(results, f)
-    
-    return results
 
 class BenchmarkGUI:
     def __init__(self, root):
@@ -71,12 +71,6 @@ class BenchmarkGUI:
         self.canvas = FigureCanvasTkAgg(self.fig, master=main_frame)
         self.canvas.get_tk_widget().grid(row=0, column=0, columnspan=2)
         
-        # Create buttons
-        ttk.Button(main_frame, text="Run All Benchmarks", command=self.run_benchmarks).grid(row=1, column=0, pady=10)
-        ttk.Button(main_frame, text="Show Results", command=self.show_results).grid(row=1, column=1, pady=10)
-
-    def run_benchmarks(self):
-        os.system("cd .. && ..\run_benchmarks.bat")
         self.show_results()
 
     def show_results(self):
@@ -131,8 +125,9 @@ class BenchmarkGUI:
 if __name__ == "__main__":
     # Run benchmark first
     results = run_benchmark(1, 10000000, 4)
+    print("Python benchmark completed.")
     
-    # Then show GUI
+    # Show GUI with results
     root = tk.Tk()
     app = BenchmarkGUI(root)
     root.mainloop()

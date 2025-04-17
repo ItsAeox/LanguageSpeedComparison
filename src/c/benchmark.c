@@ -52,6 +52,8 @@ void* thread_task(void* args) {
 }
 
 int main() {
+    printf("Running C benchmark...\n");
+    
     const long long range_start = 1;
     const long long range_end = 10000000;
     const int num_threads = 4;
@@ -104,13 +106,8 @@ int main() {
     fprintf(fp, "}\n");
     fclose(fp);
     
-    printf("\nC Benchmark Results:\n");
-    printf("Range: %lld to %lld\n", range_start, range_end);
-    printf("Number of primes found: %d\n", single_count);
-    printf("Single-threaded time: %.4f seconds\n", single_thread_time);
-    printf("Multi-threaded time (%d threads): %.4f seconds\n", num_threads, multi_thread_time);
-    printf("Speedup: %.2fx\n", single_thread_time / multi_thread_time);
-    
+    printf("C benchmark completed.\n");
+
     free(single_thread_primes);
     free(multi_thread_primes);
     return 0;

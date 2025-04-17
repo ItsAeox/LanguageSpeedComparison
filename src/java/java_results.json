@@ -1,0 +1,8 @@
+{
+  "language": "Java",
+  "range": [1, 10000000],
+  "primes_found": 664579,
+  "single_thread_time": 4.189685,
+  "multi_thread_time": 1.5058831,
+  "speedup": 2.7822113150748553
+}
